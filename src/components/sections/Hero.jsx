@@ -14,7 +14,7 @@ import Badge from '../ui/Badge';
 
 const Hero = () => {
   const stats = [
-    { icon: <FiTrendingUp />, value: '360°', label: 'Digital Management' },
+    { icon: <FiTrendingUp />, value: '360°', label: 'FILMS Management' },
     { icon: <FiMusic />, value: 'Music', label: 'Distribution' },
     { icon: <FiMonitor />, value: 'OTT + App', label: 'Management' },
   ];
@@ -61,7 +61,7 @@ const Hero = () => {
               transition={{ delay: 0.1, duration: 0.5 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight"
             >
-              Your digital
+              Your FILMS
               <br />
               business. <span className="gradient-text">Managed.</span>
             </motion.h1>
@@ -86,7 +86,7 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-base text-muted max-w-lg mt-4 leading-relaxed"
             >
-              EKANA DIGITAL manages social media, distributes music, handles OTT & apps, 
+              EKANA FILMS manages social media, distributes music, handles OTT & apps, 
               and runs performance marketing campaigns for creators and brands worldwide.
             </motion.p>
             
@@ -192,7 +192,7 @@ const Hero = () => {
                   <div className="flex justify-between items-center relative z-10">
                     <div className="flex items-center gap-2">
                       <MdOutlineDashboard className="text-gold text-lg" />
-                      <span className="font-bold text-sm">EKANA DIGITAL</span>
+                      <span className="font-bold text-sm">EKANA FILMS</span>
                     </div>
                     <span className="text-green bg-green/10 px-3 py-1 rounded-full text-[10px] font-semibold animate-pulse">
                       <MdSpeed className="inline mr-1 text-[10px]" />

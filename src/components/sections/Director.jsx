@@ -7,6 +7,8 @@ import {
 import { FiTarget, FiTrendingUp, FiAward } from 'react-icons/fi';
 import { MdOutlineVerified } from 'react-icons/md';
 import Badge from '../ui/Badge';
+import abhishekPhoto from '../../assets/abhishekpandey.png';
+
 
 const Director = () => {
   const achievements = [
@@ -58,7 +60,7 @@ const Director = () => {
               className="relative flex-shrink-0"
             >
               <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gold to-pink flex items-center justify-center text-4xl font-black text-black shadow-xl shadow-gold/20">
-                AP
+                <img src={abhishekPhoto} alt="Abhishek Pandey" className="w-full h-full rounded-full object-cover object-top" />
               </div>
               <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green border-2 border-card animate-pulse" />
             </motion.div>
@@ -67,10 +69,10 @@ const Director = () => {
             <div className="text-center md:text-left flex-1">
               <FaQuoteLeft className="text-gold/20 text-2xl mb-1" />
               <h3 className="text-2xl font-bold">Abhishek Pandey</h3>
-              <p className="text-gold text-[11px] font-semibold mt-0.5">Director — EKANA DIGITAL</p>
+              <p className="text-gold text-[11px] font-semibold mt-0.5">Director — EKANA FILMS</p>
               
               <p className="text-[13px] text-muted mt-3 leading-relaxed">
-                Leading social media management, digital marketing, music distribution and OTT/app growth with a focus on practical, measurable results.
+                Leading social media management, FILMS marketing, music distribution and OTT/app growth with a focus on practical, measurable results.
               </p>
               
               {/* Achievements */}
@@ -87,7 +89,7 @@ const Director = () => {
               </div>
               
               {/* Social Links */}
-              <div className="flex gap-1.5 justify-center md:justify-start mt-3 pt-3 border-t border-white/5">
+              {/* <div className="flex gap-1.5 justify-center md:justify-start mt-3 pt-3 border-t border-white/5">
                 {[
                   { icon: <FaLinkedin />, label: 'LinkedIn' },
                   { icon: <FaTwitter />, label: 'Twitter' },
@@ -104,7 +106,7 @@ const Director = () => {
                     <span className="text-xs">{social.icon}</span>
                   </motion.a>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.div>

@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { 
   FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt, 
   FaRegSmile, FaCheckCircle, FaPaperPlane,
-  FaInstagram, FaYoutube, FaTwitter, 
-  FaLinkedin, FaSpotify, FaApple, FaFacebook,
+  FaInstagram, FaFacebook,
   FaArrowRight, FaClock, FaUsers, FaRocket,
   FaGlobe, FaStar, FaShieldAlt
 } from 'react-icons/fa';
@@ -49,20 +48,16 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: <FaWhatsapp />, label: 'WhatsApp', value: '+91 12345 67890', href: 'https://wa.me/911234567890' },
-    { icon: <FaEnvelope />, label: 'Email', value: 'contact@ekana.com', href: 'mailto:contact@ekana.com' },
-    { icon: <FaPhone />, label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
+    { icon: <FaWhatsapp />, label: 'WhatsApp', value: '+91 80874 31062', href: 'https://wa.me/918087431062' },
+    { icon: <FaEnvelope />, label: 'Email', value: 'abhishekdigital@ekanafilms.com', href: 'mailto:abhishekdigital@ekanafilms.com' },
+    { icon: <FaPhone />, label: 'Phone', value: '+91 80874 31062', href: 'tel:+918087431062' },
     { icon: <FiMapPin />, label: 'Location', value: 'Mumbai, India', href: '#' },
   ];
 
+  // ✅ ONLY Instagram & Facebook with separate paths
   const socialLinks = [
-    { icon: <FaInstagram />, label: 'Instagram' },
-    { icon: <FaYoutube />, label: 'YouTube' },
-    { icon: <FaTwitter />, label: 'Twitter' },
-    { icon: <FaLinkedin />, label: 'LinkedIn' },
-    { icon: <FaSpotify />, label: 'Spotify' },
-    { icon: <FaApple />, label: 'Apple Music' },
-    { icon: <FaFacebook />, label: 'Facebook' },
+    { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/ekanafilms/' },
+    { icon: <FaFacebook />, label: 'Facebook', href: 'https://www.facebook.com/ekanafilms' },
   ];
 
   const stats = [
@@ -178,14 +173,14 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social Links - Clean */}
+            {/* Social Links - ONLY Instagram & Facebook with separate paths */}
             <div>
               <h4 className="text-xs text-muted uppercase tracking-wider mb-2">Follow Us</h4>
               <div className="flex flex-wrap gap-2">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href={social.href}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-9 h-9 rounded-full bg-white/5 hover:bg-gold/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold/30 transition-all duration-300"

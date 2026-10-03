@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
 import { 
-  FaLinkedin, FaTwitter, FaEnvelope, FaUsers, 
-  FaUserTie, FaStar, FaBriefcase, FaRegSmile,
-  FaGraduationCap, FaRocket, FaUserCheck
+  FaStar, FaRegSmile,
 } from 'react-icons/fa';
-import { FiBriefcase, FiTrendingUp, FiAward } from 'react-icons/fi';
-import { MdPeople, MdOutlineEmojiPeople } from 'react-icons/md';
+import { MdPeople } from 'react-icons/md';
 import Badge from '../ui/Badge';
+import abhishekPhoto from '../../assets/abhishekpandey.png';
+import dileepPhoto from '../../assets/dileepthakur.png';
+import rahulKPhoto from '../../assets/rahulkushwaha.png';
+import khushiPhoto from '../../assets/khushi.png';
+import rahulPPhoto from '../../assets/rahulpandey.png';
+
 
 const Team = () => {
   const members = [
@@ -14,29 +17,41 @@ const Team = () => {
       initials: 'AP',
       name: 'Abhishek Pandey',
       role: 'Director',
-      description: 'Overall digital strategy, social media, marketing, music distribution and OTT/app management.',
+      description: 'Overall FILMS strategy, social media, marketing, music distribution and OTT/app management.',
       expertise: ['Strategy', 'Leadership', 'Growth'],
+      photo: abhishekPhoto,
     },
     {
-      initials: 'CD',
-      name: 'Creative Designer',
+      initials: 'DT',
+      name: 'Dileep Thakur',
       role: 'Creative & Design',
       description: 'Posters, thumbnails, social creatives and campaign artwork.',
       expertise: ['Design', 'Branding', 'UI/UX'],
+      photo: dileepPhoto,
     },
     {
-      initials: 'VE',
-      name: 'Video Editor',
+      initials: 'RK',
+      name: 'Rahul Kushwaha',
       role: 'Video & Reels',
       description: 'Reels, shorts, promotional videos and platform-ready content.',
       expertise: ['Editing', 'Animation', 'Production'],
+      photo: rahulKPhoto,
     },
     {
-      initials: 'SM',
-      name: 'Social Media Executive',
+      initials: 'KS',
+      name: 'Khushi Singh',
       role: 'Social & Support',
       description: 'Posting, scheduling, notifications, community support and daily operations.',
       expertise: ['Community', 'Engagement', 'Analytics'],
+      photo: khushiPhoto,
+    },
+    {
+      initials: 'RP',
+      name: 'Rahul Pandey',
+      role: 'Account Manager',
+      description: 'Client communication, account handling, project coordination and relationship management.',
+      expertise: ['Client Relations', 'Coordination', 'Management'],
+      photo: rahulPPhoto,
     },
   ];
 
@@ -83,7 +98,7 @@ const Team = () => {
             Our <span className="gradient-text">Team</span>
           </h2>
           <p className="text-sm text-muted">
-            <FaRegSmile className="inline mr-1" /> Demo team — real photos and details can be added later.
+            <FaRegSmile className="inline mr-1" /> Meet the people behind EKANA FILMS.
           </p>
         </motion.div>
         
@@ -93,7 +108,7 @@ const Team = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
         >
           {members.map((member, index) => (
             <motion.div
@@ -101,10 +116,22 @@ const Team = () => {
               variants={itemVariants}
               className="group bg-card border border-line rounded-xl p-5 text-center hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 transition-all duration-300"
             >
-              {/* Avatar */}
+              {/* Avatar with Original Photo */}
               <div className="relative inline-block">
-                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gold to-pink flex items-center justify-center text-2xl font-black text-black group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  {member.initials}
+                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gold to-pink flex items-center justify-center text-2xl font-black text-black group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 ring-2 ring-white/10">
+                  {member.photo ? (
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="w-full h-full object-cover object-top"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.parentElement.innerHTML = `<span class="flex items-center justify-center w-full h-full text-black font-black text-2xl">${member.initials}</span>`;
+                      }}
+                    />
+                  ) : (
+                    <span>{member.initials}</span>
+                  )}
                 </div>
                 <div className="absolute -bottom-1 right-2 w-3 h-3 rounded-full bg-green border-2 border-card animate-pulse" />
               </div>
@@ -129,31 +156,9 @@ const Team = () => {
                   </span>
                 ))}
               </div>
-              
-              {/* Social Links */}
-              <div className="flex justify-center gap-1.5 mt-3 pt-3 border-t border-white/5">
-                {[
-                  { icon: <FaLinkedin />, label: 'LinkedIn' },
-                  { icon: <FaTwitter />, label: 'Twitter' },
-                  { icon: <FaEnvelope />, label: 'Email' }
-                ].map((social, idx) => (
-                  <motion.a
-                    key={idx}
-                    href="#"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/30 hover:text-gold hover:border-gold/30 transition-all duration-300"
-                    aria-label={social.label}
-                  >
-                    <span className="text-[10px]">{social.icon}</span>
-                  </motion.a>
-                ))}
-              </div>
             </motion.div>
           ))}
         </motion.div>
-
-        
       </div>
     </section>
   );

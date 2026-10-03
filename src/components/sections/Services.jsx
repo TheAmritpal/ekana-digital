@@ -18,7 +18,7 @@ const Services = () => {
     {
       icon: <FaMusic />,
       title: 'Music Distribution',
-      description: 'Distribute and manage songs across digital music platforms.',
+      description: 'Distribute and manage songs across FILMS music platforms.',
       features: ['Music release management', 'Spotify / Apple Music', 'YouTube Music & other platforms', 'Release promotion & campaigns'],
     },
     {
@@ -29,7 +29,7 @@ const Services = () => {
     },
     {
       icon: <FaBullhorn />,
-      title: 'Ads & Digital Marketing',
+      title: 'Ads & FILMS Marketing',
       description: 'Performance campaigns designed around measurable business goals.',
       features: ['Meta Ads', 'Google Ads', 'YouTube Ads', 'App installs & subscription campaigns'],
     },
@@ -88,10 +88,10 @@ const Services = () => {
             ✦ Our Services
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-black mt-3 mb-2">
-            Four core services. <span className="gradient-text">One digital team.</span>
+            Four core services. <span className="gradient-text">One FILMS team.</span>
           </h2>
           <p className="text-sm text-muted">
-            Social management, music distribution, OTT & app management, and digital marketing.
+            Social management, music distribution, OTT & app management, and FILMS marketing.
           </p>
         </motion.div>
         

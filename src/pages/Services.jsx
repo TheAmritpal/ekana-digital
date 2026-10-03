@@ -49,7 +49,7 @@ const Services = () => {
       id: 2,
       category: 'music',
       title: 'Music Distribution',
-      description: 'Distribute and manage songs across digital music platforms worldwide.',
+      description: 'Distribute and manage songs across FILMS music platforms worldwide.',
       icon: <FaMusic />,
       features: [
         'Music release management',
@@ -76,7 +76,7 @@ const Services = () => {
     {
       id: 4,
       category: 'marketing',
-      title: 'Ads & Digital Marketing',
+      title: 'Ads & FILMS Marketing',
       description: 'Performance campaigns designed around measurable business goals.',
       icon: <FaBullhorn />,
       features: [
@@ -163,7 +163,7 @@ const Services = () => {
             What We <span className="gradient-text">Offer</span>
           </h1>
           <p className="text-sm text-muted">
-            Comprehensive digital solutions to help you grow your brand and reach your audience.
+            Comprehensive FILMS solutions to help you grow your brand and reach your audience.
           </p>
         </motion.div>
 

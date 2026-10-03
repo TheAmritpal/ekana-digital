@@ -16,7 +16,7 @@ const FloatingButtons = () => {
 
   // Handle WhatsApp
   const handleWhatsApp = () => {
-    window.open('https://wa.me/911234567890', '_blank');
+    window.open('https://wa.me/918087431062', '_blank');
   };
 
   // Handle Scroll to Top

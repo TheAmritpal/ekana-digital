@@ -53,7 +53,7 @@ const Navbar = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-gold to-pink blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
               <span className="relative text-xl md:text-2xl font-black tracking-tight">
-                EKANA <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink">DIGITAL</span>
+                EKANA <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink">FILMS</span>
               </span>
             </motion.div>
             <motion.span 

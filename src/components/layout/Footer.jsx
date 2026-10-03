@@ -1,10 +1,9 @@
+
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  FaInstagram, FaYoutube, FaTwitter, FaLinkedin, 
-  FaSpotify, FaApple, FaFacebook, FaTiktok,
+  FaInstagram, FaFacebook,
   FaArrowRight, FaPhone,
-  FaGlobe
 } from 'react-icons/fa';
 import { FiSend } from 'react-icons/fi';
 import { MdEmail, MdLocationOn, MdAccessTime } from 'react-icons/md';
@@ -12,22 +11,27 @@ import { MdEmail, MdLocationOn, MdAccessTime } from 'react-icons/md';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  // ✅ ONLY Instagram & Facebook, each with separate path
   const socialIcons = [
-    { icon: <FaInstagram />, label: 'Instagram', color: 'hover:text-pink-500' },
-    { icon: <FaYoutube />, label: 'YouTube', color: 'hover:text-red-500' },
-    { icon: <FaTwitter />, label: 'Twitter', color: 'hover:text-blue-400' },
-    { icon: <FaLinkedin />, label: 'LinkedIn', color: 'hover:text-blue-600' },
-    { icon: <FaSpotify />, label: 'Spotify', color: 'hover:text-green-500' },
-    { icon: <FaApple />, label: 'Apple Music', color: 'hover:text-gray-400' },
-    { icon: <FaFacebook />, label: 'Facebook', color: 'hover:text-blue-500' },
-    { icon: <FaTiktok />, label: 'TikTok', color: 'hover:text-pink-400' },
+    { 
+      icon: <FaInstagram />, 
+      label: 'Instagram', 
+      color: 'hover:text-pink-500',
+      href: 'https://www.instagram.com/ekanafilms/' 
+    },
+    { 
+      icon: <FaFacebook />, 
+      label: 'Facebook', 
+      color: 'hover:text-blue-500',
+      href: 'https://www.facebook.com/ekanafilms' 
+    },
   ];
 
   const services = [
     { name: 'Social Media Management', href: '/services' },
     { name: 'Music Distribution', href: '/services' },
     { name: 'OTT & App Management', href: '/services' },
-    { name: 'Digital Marketing', href: '/services' },
+    { name: 'FILMS Marketing', href: '/services' },
     { name: 'Content Creation', href: '/services' },
     { name: 'Analytics & Growth', href: '/services' },
   ];
@@ -40,8 +44,8 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: <MdEmail />, label: 'Email', value: 'contact@ekana.com' },
-    { icon: <FaPhone />, label: 'Phone', value: '+91 12345 67890' },
+    { icon: <MdEmail />, label: 'Email', value: 'abhishekdigital@ekanafilms.com' },
+    { icon: <FaPhone />, label: 'Phone', value: '+91 8087431062' },
     { icon: <MdLocationOn />, label: 'Location', value: 'Mumbai, India' },
     { icon: <MdAccessTime />, label: 'Working Hours', value: 'Mon-Fri 9AM-6PM' },
   ];
@@ -91,23 +95,23 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-black">
-                  EKANA <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink">DIGITAL</span>
+                  EKANA <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink">FILMS</span>
                 </h3>
-                <span className="text-xs text-muted tracking-wider uppercase">Digital Ecosystem</span>
+                <span className="text-xs text-muted tracking-wider uppercase">FILMS Ecosystem</span>
               </div>
             </Link>
             
             <p className="text-muted text-sm leading-relaxed max-w-md">
               Social Media • Music Distribution • OTT & App • Marketing — 
-              One connected digital ecosystem for creators, artists, and brands worldwide.
+              One connected FILMS ecosystem for creators, artists, and brands worldwide.
             </p>
             
-            {/* Social Icons */}
+            {/* Social Icons — ONLY Instagram & Facebook with separate paths */}
             <div className="flex flex-wrap gap-2 mt-6">
               {socialIcons.map((social, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href={social.href}
                   whileHover={{ scale: 1.15, y: -3 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, scale: 0 }}
@@ -277,12 +281,25 @@ const Footer = () => {
           transition={{ delay: 0.4 }}
           className="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted"
         >
-          <span>© {currentYear} EKANA DIGITAL. All rights reserved.</span>
+          {/* ✅ Copyright with Powered by Nitar Infotech */}
+          <span>
+            © {currentYear} EKANA FILMS. All rights reserved. | Powered by{' '}
+            <a
+              href="https://nitar.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink hover:opacity-80 transition-opacity"
+            >
+              Nitar Infotech
+            </a>
+          </span>
+
           <div className="flex gap-4">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <span className="w-0.5 h-3 rounded-full bg-white/10" />
             <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
+          
           <span>Social • Music • OTT • Marketing</span>
         </motion.div>
       </div>

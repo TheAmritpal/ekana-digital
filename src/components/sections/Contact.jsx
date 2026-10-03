@@ -14,22 +14,22 @@ const Contact = () => {
     { 
       icon: <FaWhatsapp />, 
       label: 'WhatsApp', 
-      value: '+91 12345 67890',
-      href: 'https://wa.me/911234567890',
+      value: '+91 8087431062',
+      href: 'https://wa.me/918087431062',
       description: 'Quick response'
     },
     { 
       icon: <FaEnvelope />, 
       label: 'Email', 
-      value: 'contact@ekana.com',
-      href: 'mailto:contact@ekana.com',
+      value: 'abhishekdigital@ekanafilms.com',
+      href: 'mailto:abhishekdigital@ekanafilms.com',
       description: 'We reply within 24 hours'
     },
     { 
       icon: <FaPhone />, 
       label: 'Phone', 
-      value: '+91 98765 43210',
-      href: 'tel:+919876543210',
+      value: '+91 8087431062',
+      href: 'tel:+918087431062',
       description: 'Mon-Fri 9AM-6PM'
     },
     { 
@@ -70,7 +70,7 @@ const Contact = () => {
               transition={{ delay: 0.1, duration: 0.4 }}
               className="text-3xl sm:text-4xl font-black mt-3 mb-2"
             >
-              One team for your <span className="gradient-text">digital growth.</span>
+              One team for your <span className="gradient-text">FILMS growth.</span>
             </motion.h2>
             
             <motion.p
@@ -81,7 +81,7 @@ const Contact = () => {
               className="text-sm text-muted max-w-2xl mx-auto"
             >
               <FaRocket className="inline mr-1 text-gold/50" />
-              Creators, singers, music labels, OTT platforms and app businesses — let's build and grow your complete digital ecosystem.
+              Creators, singers, music labels, OTT platforms and app businesses — let's build and grow your complete FILMS ecosystem.
             </motion.p>
             
             {/* Contact Cards - Clean no boxes */}
@@ -118,7 +118,7 @@ const Contact = () => {
               className="flex flex-wrap gap-3 justify-center mt-6"
             >
               <a 
-                href="https://wa.me/911234567890" 
+                href="https://wa.me/918087431062" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-gold text-black hover:shadow-lg hover:shadow-gold/25 hover:scale-[1.02] transition-all duration-300"
@@ -126,7 +126,7 @@ const Contact = () => {
                 <FaWhatsapp /> WhatsApp Us
               </a>
               <a 
-                href="mailto:contact@ekana.com"
+                href="mailto:abhishekdigital@ekanafilms.com"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:scale-[1.02] transition-all duration-300"
               >
                 <FiMail /> Email Us

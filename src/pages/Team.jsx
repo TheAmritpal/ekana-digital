@@ -1,14 +1,19 @@
 import { motion } from 'framer-motion';
 import { 
-  FaLinkedin, FaTwitter, FaEnvelope, FaStar,
-  FaRegSmile, FaCheckCircle, FaArrowRight,
+  FaStar, FaRegSmile, FaCheckCircle, FaArrowRight,
   FaRocket, FaUsers, FaGlobe, FaAward,
-  FaInstagram, FaYoutube
 } from 'react-icons/fa';
-import { FiBriefcase, FiTrendingUp, FiAward } from 'react-icons/fi';
-import { MdPeople, MdOutlineVerified } from 'react-icons/md';
+import { FiBriefcase } from 'react-icons/fi';
+import { MdPeople } from 'react-icons/md';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
+
+// ✅ Team photos
+import abhishekPhoto from '../assets/abhishekpandey.png';
+import dileepPhoto from '../assets/dileepthakur.png';
+import rahulKPhoto from '../assets/rahulkushwaha.png';
+import khushiPhoto from '../assets/khushi.png';
+import rahulPPhoto from '../assets/rahulpandey.png';
 
 const Team = () => {
   const teamMembers = [
@@ -16,49 +21,46 @@ const Team = () => {
       initials: 'AP',
       name: 'Abhishek Pandey',
       role: 'Founder & Director',
-      description: 'Overall digital strategy, social media, marketing, music distribution and OTT/app management.',
+      description: 'Overall FILMS strategy, social media, marketing, music distribution and OTT/app management.',
       expertise: ['Strategy', 'Leadership', 'Growth'],
       experience: '10+ Years',
+      photo: abhishekPhoto,
     },
     {
-      initials: 'CD',
-      name: 'Creative Designer',
-      role: 'Head of Design',
+      initials: 'DT',
+      name: 'Dileep Thakur',
+      role: 'Creative & Design',
       description: 'Posters, thumbnails, social creatives and campaign artwork.',
       expertise: ['Design', 'Branding', 'UI/UX'],
       experience: '6+ Years',
+      photo: dileepPhoto,
     },
     {
-      initials: 'VE',
-      name: 'Video Editor',
-      role: 'Video Production Lead',
+      initials: 'RK',
+      name: 'Rahul Kushwaha',
+      role: 'Video & Reels',
       description: 'Reels, shorts, promotional videos and platform-ready content.',
       expertise: ['Editing', 'Animation', 'Production'],
       experience: '5+ Years',
+      photo: rahulKPhoto,
     },
     {
-      initials: 'SM',
-      name: 'Social Media Executive',
-      role: 'Social Media Manager',
+      initials: 'KS',
+      name: 'Khushi Singh',
+      role: 'Social & Support',
       description: 'Posting, scheduling, notifications, community support and daily operations.',
       expertise: ['Community', 'Engagement', 'Analytics'],
       experience: '4+ Years',
+      photo: khushiPhoto,
     },
     {
-      initials: 'MK',
-      name: 'Marketing Strategist',
-      role: 'Digital Marketing Lead',
-      description: 'Campaign strategy, ad management, performance marketing and growth hacking.',
-      expertise: ['Marketing', 'Ads', 'Growth'],
-      experience: '7+ Years',
-    },
-    {
-      initials: 'AK',
-      name: 'Content Writer',
-      role: 'Content Lead',
-      description: 'Copywriting, blog posts, social captions, and brand storytelling.',
-      expertise: ['Writing', 'Storytelling', 'SEO'],
+      initials: 'RP',
+      name: 'Rahul Pandey',
+      role: 'Account Manager',
+      description: 'Client communication, account handling, project coordination and relationship management.',
+      expertise: ['Client Relations', 'Coordination', 'Management'],
       experience: '4+ Years',
+      photo: rahulPPhoto,
     },
   ];
 
@@ -67,13 +69,6 @@ const Team = () => {
     { icon: <FaRocket />, value: '1200+', label: 'Projects Delivered' },
     { icon: <FaGlobe />, value: '50+', label: 'Countries Served' },
     { icon: <FaAward />, value: '4.9', label: 'Client Rating' },
-  ];
-
-  const socialLinks = [
-    { icon: <FaInstagram />, label: 'Instagram' },
-    { icon: <FaYoutube />, label: 'YouTube' },
-    { icon: <FaTwitter />, label: 'Twitter' },
-    { icon: <FaLinkedin />, label: 'LinkedIn' },
   ];
 
   return (
@@ -140,10 +135,22 @@ const Team = () => {
               className="bg-card border border-line rounded-xl p-5 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 group"
             >
               <div className="flex items-start gap-4">
-                {/* Avatar */}
+                {/* ✅ Avatar with Photo */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-pink flex items-center justify-center text-xl font-black text-black group-hover:scale-110 transition-transform duration-300">
-                    {member.initials}
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-gold to-pink flex items-center justify-center text-xl font-black text-black group-hover:scale-110 transition-transform duration-300 ring-2 ring-white/10">
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-top"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.parentElement.innerHTML = `<span class="flex items-center justify-center w-full h-full text-black font-black text-xl">${member.initials}</span>`;
+                        }}
+                      />
+                    ) : (
+                      <span>{member.initials}</span>
+                    )}
                   </div>
                   <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-green border-2 border-card" />
                 </div>
@@ -178,21 +185,6 @@ const Team = () => {
                   </span>
                 ))}
               </div>
-
-              {/* Social Links */}
-              <div className="flex gap-1.5 mt-3 pt-3 border-t border-white/5">
-                {[FaLinkedin, FaTwitter, FaEnvelope].map((Icon, idx) => (
-                  <motion.a
-                    key={idx}
-                    href="#"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/30 hover:text-gold hover:border-gold/30 transition-all duration-300"
-                  >
-                    <Icon className="text-[9px]" />
-                  </motion.a>
-                ))}
-              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -223,29 +215,14 @@ const Team = () => {
           </div>
         </motion.div>
 
-        {/* Social Links */}
+        {/* Bottom Note */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.4 }}
           className="mt-6 text-center"
         >
-          <p className="text-[10px] text-muted mb-2">Connect with us</p>
-          <div className="flex flex-wrap gap-2 justify-center">
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={index}
-                href="#"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold/30 transition-all duration-300"
-                aria-label={social.label}
-              >
-                <span className="text-xs">{social.icon}</span>
-              </motion.a>
-            ))}
-          </div>
-          <p className="text-[9px] text-muted mt-3 flex items-center justify-center gap-1">
+          <p className="text-[9px] text-muted flex items-center justify-center gap-1">
             <FaCheckCircle className="text-green text-[9px]" />
             We're building something amazing together
           </p>

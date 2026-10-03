@@ -11,6 +11,8 @@ import Services from './pages/Services';
 import ScrollToTop from './components/sections/ScrollToTop';
 import FloatingButtons from './components/sections/FloatingButtons';
 import Error from './pages/Error';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
                 <Route path="/team" element={<Team />} />
                 <Route path="/portfolio" element={<Portfolio />} />
                  <Route path="/services" element={<Services />} />
+                 <Route path="/privacy" element={<Privacy />} />
+                 <Route path="/terms" element={<Terms/>} />
                  <Route path="*" element={<Error />} />
             </Routes>
             <FloatingButtons />

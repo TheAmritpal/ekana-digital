@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { 
   FaRocket, FaUsers, FaGlobe, FaStar, 
   FaCheckCircle, FaArrowRight, FaRegSmile,
-  FaInstagram, FaYoutube, FaTwitter, FaLinkedin,
-  FaSpotify, FaApple, FaFacebook, FaMusic,
+  FaInstagram, FaFacebook,
+  FaMusic,
   FaTv, FaBullhorn, FaPalette, FaChartLine,
   FaShieldAlt, FaAward, FaHandshake
 } from 'react-icons/fa';
@@ -11,6 +11,13 @@ import { FiTarget, FiTrendingUp } from 'react-icons/fi';
 import { MdOutlineDashboard, MdPeople } from 'react-icons/md';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
+
+// ✅ Team photos
+import abhishekPhoto from '../assets/abhishekpandey.png';
+import dileepPhoto from '../assets/dileepthakur.png';
+import rahulKPhoto from '../assets/rahulkushwaha.png';
+import khushiPhoto from '../assets/khushi.png';
+import rahulPPhoto from '../assets/rahulpandey.png';
 
 const About = () => {
   const stats = [
@@ -27,14 +34,44 @@ const About = () => {
     { icon: <FaAward />, title: 'Excellence' },
   ];
 
+  // ✅ ONLY Instagram & Facebook
   const socialLinks = [
-    { icon: <FaInstagram />, label: 'Instagram' },
-    { icon: <FaYoutube />, label: 'YouTube' },
-    { icon: <FaTwitter />, label: 'Twitter' },
-    { icon: <FaLinkedin />, label: 'LinkedIn' },
-    { icon: <FaSpotify />, label: 'Spotify' },
-    { icon: <FaApple />, label: 'Apple Music' },
-    { icon: <FaFacebook />, label: 'Facebook' },
+    { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/ekanafilms/' },
+    { icon: <FaFacebook />, label: 'Facebook', href: 'https://www.facebook.com/ekanafilms' },
+  ];
+
+  // ✅ Updated team with photos and 5 members
+  const teamMembers = [
+    {
+      initials: 'AP',
+      name: 'Abhishek Pandey',
+      role: 'Director',
+      photo: abhishekPhoto,
+    },
+    {
+      initials: 'DT',
+      name: 'Dileep Thakur',
+      role: 'Creative & Design',
+      photo: dileepPhoto,
+    },
+    {
+      initials: 'RK',
+      name: 'Rahul Kushwaha',
+      role: 'Video & Reels',
+      photo: rahulKPhoto,
+    },
+    {
+      initials: 'KS',
+      name: 'Khushi Singh',
+      role: 'Social & Support',
+      photo: khushiPhoto,
+    },
+    {
+      initials: 'RP',
+      name: 'Rahul Pandey',
+      role: 'Account Manager',
+      photo: rahulPPhoto,
+    },
   ];
 
   return (
@@ -60,7 +97,7 @@ const About = () => {
             Who We <span className="gradient-text">Are</span>
           </h1>
           <p className="text-sm text-muted">
-            EKANA DIGITAL is a team of passionate creators and strategists dedicated to helping brands grow in the digital world.
+            EKANA FILMS is a team of passionate creators and strategists dedicated to helping brands grow in the FILMS world.
           </p>
         </motion.div>
 
@@ -98,9 +135,9 @@ const About = () => {
             <h2 className="text-xl font-bold">Our Story</h2>
           </div>
           <p className="text-sm text-muted leading-relaxed">
-            Founded in 2020, EKANA DIGITAL was born from a vision to create a one-stop digital ecosystem 
+            Founded in 2020, EKANA FILMS was born from a vision to create a one-stop FILMS ecosystem 
             for creators, artists, and brands. Today, we serve clients across 50+ countries through 
-            social media management, music distribution, OTT platform management, and digital marketing.
+            social media management, music distribution, OTT platform management, and FILMS marketing.
           </p>
         </motion.div>
 
@@ -117,7 +154,7 @@ const About = () => {
             </div>
             <h3 className="text-base font-bold mb-1">Our Mission</h3>
             <p className="text-sm text-muted leading-relaxed">
-              To empower creators and brands with a connected digital ecosystem that drives growth and engagement.
+              To empower creators and brands with a connected FILMS ecosystem that drives growth and engagement.
             </p>
           </motion.div>
 
@@ -132,7 +169,7 @@ const About = () => {
             </div>
             <h3 className="text-base font-bold mb-1">Our Vision</h3>
             <p className="text-sm text-muted leading-relaxed">
-              To be the leading digital ecosystem partner for creators and brands worldwide.
+              To be the leading FILMS ecosystem partner for creators and brands worldwide.
             </p>
           </motion.div>
         </div>
@@ -200,35 +237,41 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Team */}
+        {/* ✅ Team — Updated with photos & 5 members */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="max-w-3xl mx-auto mb-10"
+          className="max-w-4xl mx-auto mb-10"
         >
-          <h2 className="text-xl font-bold text-center mb-4 flex items-center justify-center gap-2">
+          <h2 className="text-xl font-bold text-center mb-6 flex items-center justify-center gap-2">
             <MdPeople className="text-gold" />
             Our Team
           </h2>
-          <div className="grid grid-cols-3 gap-4 text-center">
-            {[
-              { initials: 'AP', name: 'Abhishek Pandey', role: 'Director' },
-              { initials: 'CD', name: 'Creative Designer', role: 'Design Lead' },
-              { initials: 'VE', name: 'Video Editor', role: 'Video Lead' },
-            ].map((member, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+            {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + index * 0.05 }}
-                className="p-2"
+                className="p-2 group"
               >
-                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-gold to-pink flex items-center justify-center text-xl font-black text-black">
-                  {member.initials}
+                <div className="w-16 h-16 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gold to-pink flex items-center justify-center text-xl font-black text-black ring-2 ring-white/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `<span class="flex items-center justify-center w-full h-full text-black font-black text-xl">${member.initials}</span>`;
+                    }}
+                  />
                 </div>
-                <p className="text-sm font-medium mt-1">{member.name}</p>
-                <p className="text-[10px] text-muted">{member.role}</p>
+                <p className="text-sm font-medium mt-2 group-hover:text-gold transition-colors">
+                  {member.name}
+                </p>
+                <p className="text-[10px] text-gold font-semibold">{member.role}</p>
               </motion.div>
             ))}
           </div>
@@ -238,7 +281,7 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.4 }}
+          transition={{ delay: 0.55, duration: 0.4 }}
           className="text-center max-w-2xl mx-auto pt-6 border-t border-white/5"
         >
           <h3 className="text-base font-bold mb-3">Connect With Us</h3>
@@ -246,7 +289,9 @@ const About = () => {
             {socialLinks.map((social, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold/30 transition-all duration-300"

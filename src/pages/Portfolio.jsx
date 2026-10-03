@@ -7,12 +7,28 @@ import {
   FaRocket, FaUsers, FaStar, FaMusic,
   FaTv, FaBullhorn, FaPalette, FaChartLine,
   FaExternalLinkAlt, FaPlay, FaAndroid,
-  FaApple as FaAppleIcon
+  FaApple as FaAppleIcon,
+  FaUserCheck
 } from 'react-icons/fa';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { MdPeople, MdOutlineDashboard, MdVerified } from 'react-icons/md';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
+
+// ✅ Account/Artist photos
+import kaeshariPhoto from '../assets/keshari.jpeg';
+import nilamPhoto from '../assets/nilam.jpeg';
+import samarPhoto from '../assets/samar.jpeg';
+import kkPhoto from '../assets/kk.jpeg';
+import abhiPhoto from '../assets/abhi.jpeg';
+import kaluPhoto from '../assets/kalu.jpeg';
+import parmodPhoto from '../assets/pramod.jpeg';
+import batohiPhoto from '../assets/batohi.png';
+import monuPhoto from '../assets/monu.png';
+import aniketPhoto from '../assets/aniket.png';
+import gautamPhoto from '../assets/gautam.png';
+import sonaPhoto from '../assets/sona.png';
+import anchalPhoto from '../assets/anchal.png';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all');
@@ -26,6 +42,7 @@ const Portfolio = () => {
 
   const categories = [
     { id: 'all', label: 'All Work' },
+    { id: 'artists', label: 'Artists' },
     { id: 'social', label: 'Social Media' },
     { id: 'music', label: 'Music' },
     { id: 'ott', label: 'OTT & App' },
@@ -33,89 +50,138 @@ const Portfolio = () => {
   ];
 
   const portfolioItems = [
+    // ✅ ARTISTS / ACCOUNTS WE MANAGE
     {
       id: 1,
-      category: 'social',
-      title: 'Kalpana Patowary',
-      subtitle: 'Singer • Artist',
-      description: 'Complete social media management including Instagram, Facebook, and YouTube.',
-      icon: <FaMusic />,
-      tags: ['Instagram', 'YouTube', 'Facebook'],
-      stats: [
-        { label: 'Followers', value: '50K+' },
-        { label: 'Engagement', value: '8.5%' },
-        { label: 'Posts', value: '200+' },
-      ],
+      category: 'artists',
+      title: 'Kesari Lal',
+      subtitle: 'Artist • Performer',
+      description: 'Social media management, content creation and audience growth.',
+      icon: <FaUserCheck />,
+      photo: kaeshariPhoto,
+      tags: ['Instagram', 'Facebook', 'YouTube'],
     },
     {
       id: 2,
-      category: 'music',
-      title: 'Music Distribution',
-      subtitle: 'Artist • Music Producer',
-      description: 'Full music distribution across Spotify, Apple Music, JioSaavn, and more.',
-      icon: <FaSpotify />,
-      tags: ['Spotify', 'Apple Music', 'JioSaavn'],
-      stats: [
-        { label: 'Streams', value: '2.5M+' },
-        { label: 'Platforms', value: '10+' },
-        { label: 'Artists', value: '50+' },
-      ],
+      category: 'artists',
+      title: 'Nilam Giri',
+      subtitle: 'Artist • Creator',
+      description: 'Complete social media handling including reels and community management.',
+      icon: <FaUserCheck />,
+      photo: nilamPhoto,
+      tags: ['Instagram', 'YouTube', 'Facebook'],
     },
     {
       id: 3,
-      category: 'ott',
-      title: 'OTT Platform',
-      subtitle: 'Streaming • Entertainment',
-      description: 'Complete OTT platform management including content catalog and subscriptions.',
-      icon: <FaTv />,
-      tags: ['OTT', 'Android', 'iOS'],
-      stats: [
-        { label: 'Users', value: '100K+' },
-        { label: 'Content', value: '500+' },
-        { label: 'Revenue', value: '$2M+' },
-      ],
+      category: 'artists',
+      title: 'Samar',
+      subtitle: 'Artist • Musician',
+      description: 'Music distribution, promotion and social media growth strategy.',
+      icon: <FaUserCheck />,
+      photo: samarPhoto,
+      tags: ['Spotify', 'Instagram', 'YouTube'],
     },
     {
       id: 4,
-      category: 'marketing',
-      title: 'Digital Marketing',
-      subtitle: 'Brand • Business',
-      description: 'Performance marketing campaigns across Meta, Google, and YouTube.',
-      icon: <FaBullhorn />,
-      tags: ['Meta Ads', 'Google Ads', 'YouTube'],
-      stats: [
-        { label: 'Reach', value: '10M+' },
-        { label: 'Conversions', value: '5K+' },
-        { label: 'ROI', value: '300%' },
-      ],
+      category: 'artists',
+      title: 'KK',
+      subtitle: 'Artist • Performer',
+      description: 'Social media management, content strategy and brand collaborations.',
+      icon: <FaUserCheck />,
+      photo: kkPhoto,
+      tags: ['Instagram', 'Facebook', 'TikTok'],
     },
     {
       id: 5,
-      category: 'social',
-      title: 'Creator Brand',
-      subtitle: 'Influencer • Content Creator',
-      description: 'Social media growth and content strategy for a top creator.',
-      icon: <FaInstagram />,
-      tags: ['Instagram', 'TikTok', 'YouTube'],
-      stats: [
-        { label: 'Growth', value: '+200%' },
-        { label: 'Engagement', value: '12%' },
-        { label: 'Reach', value: '5M+' },
-      ],
+      category: 'artists',
+      title: 'Parmod',
+      subtitle: 'Artist • Creator',
+      description: 'Content creation, posting schedule and community engagement.',
+      icon: <FaUserCheck />,
+      photo: parmodPhoto,
+      tags: ['Instagram', 'YouTube', 'Facebook'],
     },
     {
       id: 6,
+      category: 'artists',
+      title: 'Kalu',
+      subtitle: 'Artist • Entertainer',
+      description: 'Social media growth, content planning and audience analytics.',
+      icon: <FaUserCheck />,
+      photo: kaluPhoto,
+      tags: ['Instagram', 'TikTok', 'YouTube'],
+    },
+    {
+      id: 7,
+      category: 'artists',
+      title: 'Abhishek',
+      subtitle: 'Artist • Creator',
+      description: 'Full social media management, content creation and growth.',
+      icon: <FaUserCheck />,
+      photo: abhiPhoto,
+      tags: ['Instagram', 'YouTube', 'Facebook'],
+    },
+
+    // ✅ OTHER SERVICES / PROJECTS — now with photos too
+    {
+      id: 8,
       category: 'music',
-      title: 'Music Label',
-      subtitle: 'Record Label • Music Company',
-      description: 'Music distribution and promotion for an independent music label.',
-      icon: <FaAppleIcon />,
-      tags: ['Distribution', 'Promotion', 'Playlisting'],
-      stats: [
-        { label: 'Artists', value: '20+' },
-        { label: 'Releases', value: '100+' },
-        { label: 'Streams', value: '5M+' },
-      ],
+      title: 'Batohi Babu',
+      subtitle: 'Artist • Music Producer',
+      description: 'Full music distribution across Spotify, Apple Music, JioSaavn, and more.',
+      icon: <FaSpotify />,
+      photo: batohiPhoto,
+      tags: ['Spotify', 'Apple Music', 'JioSaavn'],
+    },
+    {
+      id: 9,
+      category: 'ott',
+      title: 'Monu Albela',
+      subtitle: 'Streaming • Entertainment',
+      description: 'Complete OTT platform management including content catalog and subscriptions.',
+      icon: <FaTv />,
+      photo: monuPhoto,
+      tags: ['OTT', 'Android', 'iOS'],
+    },
+    {
+      id: 10,
+      category: 'marketing',
+      title: 'Aniket Pandey',
+      subtitle: 'Brand • Business',
+      description: 'Performance marketing campaigns across Meta, Google, and YouTube.',
+      icon: <FaBullhorn />,
+      photo: aniketPhoto,
+      tags: ['Meta Ads', 'Google Ads', 'YouTube'],
+    },
+    {
+      id: 11,
+      category: 'music',
+      title: 'Gautam Singh',
+      subtitle: 'Artist • Music Producer',
+      description: 'Full music distribution across Spotify, Apple Music, JioSaavn, and more.',
+      icon: <FaSpotify />,
+      photo: gautamPhoto,
+      tags: ['Spotify', 'Apple Music', 'JioSaavn'],
+    },
+    {
+      id: 12,
+      category: 'ott',
+      title: 'Sona Singh',
+      subtitle: 'Streaming • Entertainment',
+      description: 'Complete OTT platform management including content catalog and subscriptions.',
+      icon: <FaTv />,
+      photo: sonaPhoto,
+      tags: ['OTT', 'Android', 'iOS'],
+    },
+    {
+      id: 13,
+      category: 'marketing',
+      title: 'Anchal Singh',
+      subtitle: 'Brand • Business',
+      description: 'Performance marketing campaigns across Meta, Google, and YouTube.',
+      icon: <FaBullhorn />,
+      photo: anchalPhoto,
+      tags: ['Meta Ads', 'Google Ads', 'YouTube'],
     },
   ];
 
@@ -146,7 +212,7 @@ const Portfolio = () => {
             Our <span className="gradient-text">Portfolio</span>
           </h1>
           <p className="text-sm text-muted">
-            Explore some of our recent projects and success stories from across the digital ecosystem.
+            Explore some of our recent projects and success stories from across the FILMS ecosystem.
           </p>
         </motion.div>
 
@@ -208,10 +274,24 @@ const Portfolio = () => {
               transition={{ delay: 0.2 + index * 0.05 }}
               className="group bg-card border border-line rounded-xl p-4 hover:border-gold/30 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300"
             >
-              {/* Icon Section - Uniform gold */}
-              <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl mb-3 group-hover:scale-110 group-hover:bg-gold/20 transition-all duration-300">
-                {item.icon}
-              </div>
+              {/* ✅ Icon OR Photo Section */}
+              {item.photo ? (
+                <div className="w-full h-72 rounded-xl overflow-hidden bg-gradient-to-br from-gold/15 via-pink/15 to-gold/15 mb-3 relative">
+                  <img
+                    src={item.photo}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `<span class="flex items-center justify-center w-full h-full text-4xl font-black text-white/10">${item.title.charAt(0)}</span>`;
+                    }}
+                  />
+                </div>
+              ) : (
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl mb-3 group-hover:scale-110 group-hover:bg-gold/20 transition-all duration-300">
+                  {item.icon}
+                </div>
+              )}
 
               {/* Title & Subtitle */}
               <div className="flex items-start justify-between gap-2">
@@ -233,16 +313,6 @@ const Portfolio = () => {
                   <span key={idx} className="text-[8px] bg-white/5 px-2 py-0.5 rounded-full text-white/40">
                     {tag}
                   </span>
-                ))}
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-white/5">
-                {item.stats.map((stat, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="text-xs font-bold text-white/80">{stat.value}</div>
-                    <div className="text-[8px] text-muted">{stat.label}</div>
-                  </div>
                 ))}
               </div>
             </motion.div>
