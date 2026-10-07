@@ -247,29 +247,7 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Newsletter */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="mt-4 p-4 rounded-xl bg-gradient-to-r from-gold/5 to-pink/5 border border-white/5"
-            >
-              <div className="flex items-center gap-2">
-                <input
-                  type="email"
-                  placeholder="Subscribe to newsletter"
-                  className="flex-1 bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-sm text-white placeholder-muted focus:outline-none focus:border-gold/50 transition-colors"
-                />
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-4 py-2 rounded-lg bg-gradient-to-r from-gold to-pink text-black font-bold text-sm flex items-center gap-1"
-                >
-                  <FiSend />
-                </motion.button>
-              </div>
-            </motion.div>
+           
           </motion.div>
         </div>
 

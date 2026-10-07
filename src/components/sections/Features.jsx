@@ -96,7 +96,7 @@ const Features = () => {
             </h2>
             
             <p className="text-sm text-muted leading-relaxed max-w-md">
-              We connect your social presence, music releases, OTT/app audience and paid marketing into one coordinated FILMS growth system.
+              We connect your social presence, music releases, OTT/app audience and paid marketing into one coordinated digital growth system.
             </p>
             
             {/* Highlights */}
@@ -201,7 +201,7 @@ const Features = () => {
           className="text-center mt-10 pt-6 border-t border-white/5"
         >
           <p className="text-[11px] text-muted">
-            Ready to scale your FILMS presence? 
+            Ready to scale your digital presence? 
             <Link to="/contact" className="ml-1.5 text-gold hover:text-white transition-colors font-semibold">
               Get started today →
             </Link>

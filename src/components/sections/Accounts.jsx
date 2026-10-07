@@ -1,5 +1,8 @@
+
+
+
 import { motion } from 'framer-motion';
-import { FaUserCheck } from 'react-icons/fa';
+import { FaUserCheck, FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
 import Badge from '../ui/Badge';
 
 // ✅ Import images
@@ -11,36 +14,72 @@ import abhiPhoto from '../../assets/abhi.jpeg';
 import kaluPhoto from '../../assets/kalu.jpeg';
 import ParmodPhoto from '../../assets/pramod.jpeg';
 
+import batohiPhoto from '../../assets/batohi.png';
+import monuPhoto from '../../assets/monu.png';
+import aniketPhoto from '../../assets/aniket.png';
+import gautamPhoto from '../../assets/gautam.png';
+import sonaPhoto from '../../assets/sona.png';
+import anchalPhoto from '../../assets/anchal.png';
+
 const Accounts = () => {
+  // ✅ Add category + social links for each account
   const accounts = [
     {
-      name: 'Kesari Lal',
-      photo: kaeshariPhoto,
+      name: 'Monu Albela',
+      category: 'Singer • Artist',
+      photo: monuPhoto,
+      instagram: 'https://www.instagram.com/singer_monu_albela/',
+      facebook: 'https://www.facebook.com/singermonualbela',
+      youtube: 'https://www.youtube.com/@monualbelajunction',
     },
     {
-      name: 'Nilam Giri',
-      photo: nilamPhoto,
+      name: 'Anchal Singh',
+      category: 'Creator • Influencer',
+      photo: anchalPhoto,
+      instagram: 'https://www.instagram.com/anchal74080/',
+      facebook: 'https://www.facebook.com/profile.php?id=61580048400129',
+      youtube: 'https://www.youtube.com/',
     },
     {
-      name: 'Samar',
-      photo: samarPhoto,
+      name: 'Ankit Pandey',
+      category: 'Creator • Influencer',
+      photo: aniketPhoto,
+      instagram: 'https://www.instagram.com/ankit_pandeyji583/',
+      facebook: 'https://www.facebook.com/ankit.pandeyji.583',
+      youtube: 'https://www.youtube.com/',
     },
     {
-      name: 'KK',
-      photo: kkPhoto,
-    },
-      {
-      name: 'Parmod',
-      photo: ParmodPhoto,
-    },
-    {
-      name: 'Kalu',
-      photo: kaluPhoto,
+      name: 'Sona Singh',
+      category: 'Creator • Influencer',
+      photo: sonaPhoto,
+      instagram: 'https://www.instagram.com/sona__singh_11_/',
+      facebook: 'https://www.facebook.com/',
+      youtube: 'https://www.youtube.com/',
     },
     {
-      name: 'Abhishek',
-      photo: abhiPhoto,
+      name: 'Gautam Singh',
+      category: 'Singer',
+      photo: gautamPhoto,
+      instagram: 'https://www.instagram.com/singer_gautam_singh.999/',
+      facebook: 'https://www.facebook.com/profile.php?id=100013731486677',
+      youtube: 'https://www.youtube.com/',
     },
+    {
+      name: 'Batohi Babu बटोही बाबू',
+      category: 'Vlogger',
+      photo: batohiPhoto,
+      instagram: 'https://www.instagram.com/batohibabu/',
+      facebook: 'https://www.facebook.com/profile.php?id=100093939917600',
+      youtube: 'https://www.youtube.com/',
+    },
+    // {
+    //   name: 'Abhishek',
+    //   category: 'Artist • Creator',
+    //   photo: abhiPhoto,
+    //   instagram: 'https://www.instagram.com/',
+    //   facebook: 'https://www.facebook.com/',
+    //   youtube: 'https://www.youtube.com/',
+    // },
   ];
 
   const containerVariants = {
@@ -115,11 +154,48 @@ const Accounts = () => {
                 />
               </div>
 
-              {/* ✅ Name only */}
+              {/* ✅ Name + Category + Social Links */}
               <div className="p-4 text-center">
+                {/* Name */}
                 <h3 className="font-bold text-sm group-hover:text-gold transition-colors">
                   {account.name}
                 </h3>
+
+                {/* Category */}
+                <p className="text-gold text-[10px] font-semibold mt-0.5">
+                  {account.category}
+                </p>
+
+                {/* Social Links */}
+                <div className="flex items-center justify-center gap-2 mt-3">
+                  <a
+                    href={account.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${account.name} Instagram`}
+                    className="w-7 h-7 rounded-full bg-white/5 hover:bg-gold/10 border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold/30 transition-all duration-300"
+                  >
+                    <FaInstagram className="text-xs" />
+                  </a>
+                  <a
+                    href={account.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${account.name} Facebook`}
+                    className="w-7 h-7 rounded-full bg-white/5 hover:bg-gold/10 border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold/30 transition-all duration-300"
+                  >
+                    <FaFacebook className="text-xs" />
+                  </a>
+                  <a
+                    href={account.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${account.name} YouTube`}
+                    className="w-7 h-7 rounded-full bg-white/5 hover:bg-gold/10 border border-white/10 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold/30 transition-all duration-300"
+                  >
+                    <FaYoutube className="text-xs" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}

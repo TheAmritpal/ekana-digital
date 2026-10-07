@@ -61,7 +61,7 @@ const Hero = () => {
               transition={{ delay: 0.1, duration: 0.5 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight"
             >
-              Your FILMS
+              Your Digital
               <br />
               business. <span className="gradient-text">Managed.</span>
             </motion.h1>

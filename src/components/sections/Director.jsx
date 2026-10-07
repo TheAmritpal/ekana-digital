@@ -72,7 +72,7 @@ const Director = () => {
               <p className="text-gold text-[11px] font-semibold mt-0.5">Director — EKANA FILMS</p>
               
               <p className="text-[13px] text-muted mt-3 leading-relaxed">
-                Leading social media management, FILMS marketing, music distribution and OTT/app growth with a focus on practical, measurable results.
+                Leading social media management, digital marketing, music distribution and OTT/app growth with a focus on practical, measurable results.
               </p>
               
               {/* Achievements */}

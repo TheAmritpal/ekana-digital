@@ -70,7 +70,7 @@ const Contact = () => {
               transition={{ delay: 0.1, duration: 0.4 }}
               className="text-3xl sm:text-4xl font-black mt-3 mb-2"
             >
-              One team for your <span className="gradient-text">FILMS growth.</span>
+              One team for your <span className="gradient-text">digital growth.</span>
             </motion.h2>
             
             <motion.p
@@ -81,7 +81,7 @@ const Contact = () => {
               className="text-sm text-muted max-w-2xl mx-auto"
             >
               <FaRocket className="inline mr-1 text-gold/50" />
-              Creators, singers, music labels, OTT platforms and app businesses — let's build and grow your complete FILMS ecosystem.
+              Creators, singers, music labels, OTT platforms and app businesses — let's build and grow your complete digital ecosystem.
             </motion.p>
             
             {/* Contact Cards - Clean no boxes */}

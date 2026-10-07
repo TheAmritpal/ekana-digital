@@ -1,3 +1,5 @@
+
+
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { 
@@ -11,6 +13,9 @@ import { FiSend, FiMapPin } from 'react-icons/fi';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 
+
+const WEB3FORMS_ACCESS_KEY = '40965cd1-74c0-4d7f-b255-3b200ced0871';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -22,29 +27,65 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // User type kare toh error clear ho jaye
+    if (error) setError('');
   };
 
-  const handleSubmit = (e) => {
+  // ✅ WEB3FORMS SUBMIT HANDLER
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
+    setError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Contact Form: ${formData.subject || 'General Inquiry'}`,
+          from_name: 'Ekanafilms Website',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          user_subject: formData.subject || 'General Inquiry',
+          message: formData.message,
+        }),
       });
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.error('Form submit error:', err);
+      setIsSubmitting(false);
+      setError(
+        'Message send nahi ho paya. Please try again ya WhatsApp pe contact karein: +91 80874 31062'
+      );
+    }
   };
 
   const contactInfo = [
@@ -54,7 +95,6 @@ const Contact = () => {
     { icon: <FiMapPin />, label: 'Location', value: 'Mumbai, India', href: '#' },
   ];
 
-  // ✅ ONLY Instagram & Facebook with separate paths
   const socialLinks = [
     { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/ekanafilms/' },
     { icon: <FaFacebook />, label: 'Facebook', href: 'https://www.facebook.com/ekanafilms' },
@@ -101,7 +141,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        {/* Stats - Clean, no boxes */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,7 +163,7 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Left Side - Contact Info (2 columns) */}
+          {/* Left Side - Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -15 }}
             animate={{ opacity: 1, x: 0 }}
@@ -131,8 +171,7 @@ const Contact = () => {
             className="lg:col-span-2 space-y-4"
           >
             <h3 className="text-xs font-semibold text-muted uppercase tracking-wider">Contact Information</h3>
-            
-            {/* Contact Items - Clean, no boxes */}
+
             {contactInfo.map((info, index) => (
               <motion.a
                 key={index}
@@ -155,13 +194,14 @@ const Contact = () => {
               </motion.a>
             ))}
 
-            {/* Quick Options - Clean */}
+            {/* Quick Options */}
             <div>
               <h4 className="text-xs text-muted uppercase tracking-wider mb-2">Quick Connect</h4>
               <div className="flex flex-wrap gap-2">
                 {quickOptions.map((option, index) => (
                   <motion.button
                     key={index}
+                    type="button"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setFormData({ ...formData, subject: option })}
@@ -173,7 +213,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Social Links - ONLY Instagram & Facebook with separate paths */}
+            {/* Social Links */}
             <div>
               <h4 className="text-xs text-muted uppercase tracking-wider mb-2">Follow Us</h4>
               <div className="flex flex-wrap gap-2">
@@ -181,6 +221,8 @@ const Contact = () => {
                   <motion.a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-9 h-9 rounded-full bg-white/5 hover:bg-gold/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold/30 transition-all duration-300"
@@ -193,7 +235,7 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Contact Form (3 columns) */}
+          {/* Right Side - Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -283,6 +325,17 @@ const Contact = () => {
                       className="w-full bg-black/30 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-muted focus:outline-none focus:border-gold/50 transition-colors resize-none"
                     />
                   </div>
+
+                  {/* ✅ ERROR MESSAGE */}
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-3 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-xs text-center"
+                    >
+                      {error}
+                    </motion.div>
+                  )}
 
                   <button
                     type="submit"

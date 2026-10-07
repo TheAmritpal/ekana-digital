@@ -65,7 +65,7 @@ const Team = () => {
   ];
 
   const stats = [
-    { icon: <FaUsers />, value: '6+', label: 'Team Members' },
+    { icon: <FaUsers />, value: '5+', label: 'Team Members' },
     { icon: <FaRocket />, value: '1200+', label: 'Projects Delivered' },
     { icon: <FaGlobe />, value: '50+', label: 'Countries Served' },
     { icon: <FaAward />, value: '4.9', label: 'Client Rating' },
