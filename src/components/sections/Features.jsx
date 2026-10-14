@@ -29,7 +29,7 @@ const Features = () => {
     },
     { 
       icon: <FaPalette />, 
-      text: 'Content & creative production',
+      text: 'Content & creative Services',
     },
     { 
       icon: <FaChartLine />, 

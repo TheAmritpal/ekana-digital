@@ -40,7 +40,7 @@ const About = () => {
     { icon: <FaFacebook />, label: 'Facebook', href: 'https://www.facebook.com/ekanafilms' },
   ];
 
-  // ✅ Updated team with photos and 5 members
+  // ✅ Team with photos
   const teamMembers = [
     {
       initials: 'AP',
@@ -96,8 +96,9 @@ const About = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mt-2 mb-3">
             Who We <span className="gradient-text">Are</span>
           </h1>
+          {/* ✅ UPDATED WORDING */}
           <p className="text-sm text-muted">
-            EKANA FILMS is a team of passionate creators and strategists dedicated to helping brands grow in the FILMS world.
+            EKANA FILMS is a digital media and entertainment services company helping creators, artists, brands and entertainment businesses grow through digital solutions.
           </p>
         </motion.div>
 
@@ -134,10 +135,9 @@ const About = () => {
             <FaHandshake className="text-gold text-xl" />
             <h2 className="text-xl font-bold">Our Story</h2>
           </div>
+          {/* ✅ UPDATED WORDING */}
           <p className="text-sm text-muted leading-relaxed">
-            Founded in 2020, EKANA FILMS was born from a vision to create a one-stop FILMS ecosystem 
-            for creators, artists, and brands. Today, we serve clients across 50+ countries through 
-            social media management, music distribution, OTT platform management, and FILMS marketing.
+            Founded in 2020, EKANA FILMS was built to provide digital media and marketing solutions for creators, artists, brands, and entertainment businesses. Today, our services include social media management, music distribution, OTT & app management, digital marketing, advertising, creative services, and analytics.
           </p>
         </motion.div>
 
@@ -153,8 +153,9 @@ const About = () => {
               <FiTarget />
             </div>
             <h3 className="text-base font-bold mb-1">Our Mission</h3>
+            {/* ✅ UPDATED WORDING */}
             <p className="text-sm text-muted leading-relaxed">
-              To empower creators and brands with a connected FILMS ecosystem that drives growth and engagement.
+              Our mission is to provide reliable digital media and marketing solutions that help creators, artists, brands and entertainment businesses build their online presence, reach their audiences and achieve sustainable digital growth.
             </p>
           </motion.div>
 
@@ -168,8 +169,9 @@ const About = () => {
               <FaGlobe />
             </div>
             <h3 className="text-base font-bold mb-1">Our Vision</h3>
+            {/* ✅ UPDATED WORDING */}
             <p className="text-sm text-muted leading-relaxed">
-              To be the leading FILMS ecosystem partner for creators and brands worldwide.
+              To become a trusted digital media and entertainment services partner for creators, artists, brands and businesses worldwide.
             </p>
           </motion.div>
         </div>
@@ -237,8 +239,8 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* ✅ Team — Updated with photos & 5 members */}
-        <motion.div
+        {/* Team */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
@@ -275,7 +277,7 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* CTA */}
         <motion.div

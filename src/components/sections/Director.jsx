@@ -1,3 +1,5 @@
+
+
 import { motion } from 'framer-motion';
 import { 
   FaQuoteLeft, FaLinkedin, FaTwitter, FaEnvelope, 
@@ -7,14 +9,22 @@ import {
 import { FiTarget, FiTrendingUp, FiAward } from 'react-icons/fi';
 import { MdOutlineVerified } from 'react-icons/md';
 import Badge from '../ui/Badge';
-import abhishekPhoto from '../../assets/abhishekpandey.png';
 
+// ✅ Photos
+import abhishekPhoto from '../../assets/Abhishek.png';
+import rahulPPhoto from '../../assets/rahulpandey.png';
 
 const Director = () => {
-  const achievements = [
+  const directorAchievements = [
     { icon: <FiTarget />, label: '10+ Years Experience' },
     { icon: <FaGlobe />, label: 'Global Reach' },
     { icon: <FiTrendingUp />, label: '500+ Projects' },
+  ];
+
+  const managerAchievements = [
+    { icon: <FiTarget />, label: 'Client Relations' },
+    { icon: <FaGlobe />, label: 'Global Clients' },
+    { icon: <FiTrendingUp />, label: '500+ Accounts' },
   ];
 
   return (
@@ -39,77 +49,109 @@ const Director = () => {
             <FaRegGem className="inline mr-1" /> Leadership
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-black mt-3">
-            <span className="gradient-text">Director</span>
+            <span className="gradient-text">Our Leadership</span>
           </h2>
         </motion.div>
-        
-        {/* Director Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ type: 'spring', bounce: 0.3, duration: 0.6 }}
-          className="max-w-4xl mx-auto relative"
-        >
-          <div className="absolute -inset-1 bg-gradient-to-r from-gold/10 via-pink/10 to-gold/10 rounded-2xl blur-2xl" />
-          
-          <div className="relative bg-gradient-to-br from-gold/5 via-pink/5 to-gold/5 border border-line rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 shadow-2xl shadow-gold/5">
-            {/* Avatar */}
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: 3 }}
-              className="relative flex-shrink-0"
-            >
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gold to-pink flex items-center justify-center text-4xl font-black text-black shadow-xl shadow-gold/20">
-                <img src={abhishekPhoto} alt="Abhishek Pandey" className="w-full h-full rounded-full object-cover object-top" />
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green border-2 border-card animate-pulse" />
-            </motion.div>
+
+        {/* ✅ Two Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+
+          {/* ================= DIRECTOR CARD ================= */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', bounce: 0.3, duration: 0.6 }}
+            className="relative"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-gold/10 via-pink/10 to-gold/10 rounded-2xl blur-2xl" />
             
-            {/* Content */}
-            <div className="text-center md:text-left flex-1">
-              <FaQuoteLeft className="text-gold/20 text-2xl mb-1" />
-              <h3 className="text-2xl font-bold">Abhishek Pandey</h3>
-              <p className="text-gold text-[11px] font-semibold mt-0.5">Director — EKANA FILMS</p>
+            <div className="relative h-full bg-gradient-to-br from-gold/5 via-pink/5 to-gold/5 border border-line rounded-2xl p-6 md:p-8 flex flex-col items-center gap-5 shadow-2xl shadow-gold/5">
+              {/* Avatar */}
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: 3 }}
+                className="relative flex-shrink-0"
+              >
+                <div className="w-28 h-28 rounded-full bg-gradient-to-br from-gold to-pink flex items-center justify-center text-4xl font-black text-black shadow-xl shadow-gold/20">
+                  <img src={abhishekPhoto} alt="Abhishek Pandey" className="w-full h-full rounded-full object-cover object-top" />
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green border-2 border-card animate-pulse" />
+              </motion.div>
               
-              <p className="text-[13px] text-muted mt-3 leading-relaxed">
-                Leading social media management, digital marketing, music distribution and OTT/app growth with a focus on practical, measurable results.
-              </p>
-              
-              {/* Achievements */}
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start mt-3">
-                {achievements.map((item, index) => (
-                  <span 
-                    key={index} 
-                    className="inline-flex items-center gap-1.5 text-[9px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-white/40"
-                  >
-                    <span className="text-gold/70">{item.icon}</span>
-                    {item.label}
-                  </span>
-                ))}
+              {/* Content */}
+              <div className="text-center flex-1 flex flex-col">
+                <FaQuoteLeft className="text-gold/20 text-2xl mb-1 mx-auto" />
+                <h3 className="text-xl font-bold">Abhishek Pandey</h3>
+                <p className="text-gold text-[11px] font-semibold mt-0.5">Director — EKANA FILMS</p>
+                
+                <p className="text-[13px] text-muted mt-3 leading-relaxed">
+Leading digital strategy, social media management, digital marketing, music distribution and OTT/app growth with a focus on practical, measurable results.                </p>
+                
+                {/* Achievements */}
+                <div className="flex flex-wrap gap-2 justify-center mt-4">
+                  {directorAchievements.map((item, index) => (
+                    <span 
+                      key={index} 
+                      className="inline-flex items-center gap-1.5 text-[9px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-white/40"
+                    >
+                      <span className="text-gold/70">{item.icon}</span>
+                      {item.label}
+                    </span>
+                  ))}
+                </div>
               </div>
-              
-              {/* Social Links */}
-              {/* <div className="flex gap-1.5 justify-center md:justify-start mt-3 pt-3 border-t border-white/5">
-                {[
-                  { icon: <FaLinkedin />, label: 'LinkedIn' },
-                  { icon: <FaTwitter />, label: 'Twitter' },
-                  { icon: <FaEnvelope />, label: 'Email' }
-                ].map((social, idx) => (
-                  <motion.a
-                    key={idx}
-                    href="#"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/30 hover:text-gold hover:border-gold/30 transition-all duration-300"
-                    aria-label={social.label}
-                  >
-                    <span className="text-xs">{social.icon}</span>
-                  </motion.a>
-                ))}
-              </div> */}
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* ================= ACCOUNT MANAGER CARD ================= */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', bounce: 0.3, duration: 0.6, delay: 0.1 }}
+            className="relative"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-gold/10 via-pink/10 to-gold/10 rounded-2xl blur-2xl" />
+            
+            <div className="relative h-full bg-gradient-to-br from-gold/5 via-pink/5 to-gold/5 border border-line rounded-2xl p-6 md:p-8 flex flex-col items-center gap-5 shadow-2xl shadow-gold/5">
+              {/* Avatar */}
+              <motion.div
+                whileHover={{ scale: 1.05, rotate: -3 }}
+                className="relative flex-shrink-0"
+              >
+                <div className="w-28 h-28 rounded-full bg-gradient-to-br from-gold to-pink flex items-center justify-center text-4xl font-black text-black shadow-xl shadow-gold/20">
+                  <img src={rahulPPhoto} alt="Rahul Pandey" className="w-full h-full rounded-full object-cover object-top" />
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green border-2 border-card animate-pulse" />
+              </motion.div>
+              
+              {/* Content */}
+              <div className="text-center flex-1 flex flex-col">
+                <FaQuoteLeft className="text-gold/20 text-2xl mb-1 mx-auto" />
+                <h3 className="text-xl font-bold">Rahul Pandey</h3>
+                <p className="text-gold text-[11px] font-semibold mt-0.5">Account Manager — EKANA FILMS</p>
+                
+                <p className="text-[13px] text-muted mt-3 leading-relaxed">
+                  Managing client relationships, coordinating projects and ensuring smooth communication between clients and our creative team for consistent results.
+                </p>
+                
+                {/* Achievements */}
+                <div className="flex flex-wrap gap-2 justify-center mt-4">
+                  {managerAchievements.map((item, index) => (
+                    <span 
+                      key={index} 
+                      className="inline-flex items-center gap-1.5 text-[9px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-white/40"
+                    >
+                      <span className="text-gold/70">{item.icon}</span>
+                      {item.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

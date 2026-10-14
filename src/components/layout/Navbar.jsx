@@ -23,8 +23,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Services', href: '/services', icon: <FiTrendingUp /> },
-    { name: 'Portfolio', href: '/portfolio', icon: <FiUsers /> },
-    { name: 'Team', href: '/team', icon: <FiUsers /> },
+    { name: 'Gallery', href: '/gallery', icon: <FiUsers /> },
+    // { name: 'Team', href: '/team', icon: <FiUsers /> },
     { name: 'About', href: '/about', icon: <FiUser /> },
     { name: 'Contact', href: '/contact', icon: <FiMail /> },
   ];

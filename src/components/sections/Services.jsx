@@ -35,7 +35,7 @@ const Services = () => {
     },
     {
       icon: <FaPalette />,
-      title: 'Content & Creative',
+      title: 'Creative solutions support social,music & marketing campaigns',
       description: 'Creative production supporting social, music and marketing campaigns.',
       features: ['Posters & thumbnails', 'Reels & short videos', 'Captions, titles & hashtags', 'Campaign creatives'],
     },
@@ -88,7 +88,7 @@ const Services = () => {
             ✦ Our Services
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-black mt-3 mb-2">
-            Four core services. <span className="gradient-text">One Digital team.</span>
+            Six core services. <span className="gradient-text">One Digital team.</span>
           </h2>
           <p className="text-sm text-muted">
             Social management, music distribution, OTT & app management, and Digital marketing.

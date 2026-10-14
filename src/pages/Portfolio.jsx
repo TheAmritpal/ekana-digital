@@ -66,11 +66,10 @@ const Portfolio = () => {
             <MdVerified className="inline mr-1" /> Our Work
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mt-2 mb-3">
-            Our <span className="gradient-text">Portfolio</span>
+            Our <span className="gradient-text">Gallery</span>
           </h1>
           <p className="text-sm text-muted">
-            Explore some of our recent projects and success stories from across the FILMS ecosystem.
-          </p>
+Explore our digital media projects, social media campaigns, music promotions, OTT & app work, and creative initiatives.          </p>
         </motion.div>
 
         {/* Stats */}

@@ -14,7 +14,7 @@ import Badge from '../ui/Badge';
 
 const Hero = () => {
   const stats = [
-    { icon: <FiTrendingUp />, value: '360°', label: 'FILMS Management' },
+    { icon: <FiTrendingUp />, value: '360°', label: 'Digital Management' },
     { icon: <FiMusic />, value: 'Music', label: 'Distribution' },
     { icon: <FiMonitor />, value: 'OTT + App', label: 'Management' },
   ];
